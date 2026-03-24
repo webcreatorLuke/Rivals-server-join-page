@@ -1,1 +1,0 @@
-# Rivals-server-join-page
