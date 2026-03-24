@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roblox Rivals – Private Server</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0a0a0f;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Animated background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,68,0,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,68,0,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      animation: gridMove 8s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes gridMove {
+      0%   { background-position: 0 0; }
+      100% { background-position: 40px 40px; }
+    }
+
+    .card {
+      position: relative;
+      background: rgba(15,15,25,0.95);
+      border: 1px solid rgba(255,68,0,0.3);
+      border-radius: 20px;
+      padding: 60px 50px;
+      text-align: center;
+      max-width: 480px;
+      width: 90%;
+      box-shadow: 0 0 60px rgba(255,68,0,0.15), 0 0 120px rgba(255,68,0,0.05);
+    }
+
+    .logo {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, #ff4400, #ff6600);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 32px;
+      box-shadow: 0 0 30px rgba(255,68,0,0.4);
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 36px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,68,0,0.1);
+      border: 1px solid rgba(255,68,0,0.25);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #ff6600;
+      margin-bottom: 28px;
+    }
+
+    .badge span.dot {
+      width: 7px; height: 7px;
+      background: #44ff88;
+      border-radius: 50%;
+      animation: pulse 1.5s ease infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .info {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      padding: 4px 0;
+    }
+    .info-row span:last-child { color: rgba(255,255,255,0.85); font-weight: 600; }
+
+    .join-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #ff4400, #ff6600);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 20px rgba(255,68,0,0.4);
+      text-transform: uppercase;
+    }
+    .join-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255,68,0,0.55);
+    }
+    .join-btn:active { transform: translateY(0); }
+
+    .note {
+      margin-top: 16px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">⚔️</div>
+    <h1>Roblox Rivals</h1>
+    <p class="subtitle">Private Server Invite</p>
+
+    <div class="badge">
+      <span class="dot"></span>
+      Server is Online
+    </div>
+
+    <div class="info">
+      <div class="info-row"><span>Game</span><span>Rivals</span></div>
+      <div class="info-row"><span>Type</span><span>Private Server</span></div>
+      <div class="info-row"><span>Access</span><span>Invite Only</span></div>
+      <div class="info-row"><span>Host Approval</span><span>Required</span></div>
+    </div>
+
+    <button class="join-btn" onclick="joinServer()">
+      🎮 &nbsp; Join Roblox Rivals Private Server
+    </button>
+    <p class="note">You will need host approval before entering.</p>
+  </div>
+
+  <script>
+    function joinServer() {
+      window.location.href = "http://localhost:3000/join.html";
+    }
+  </script>
+</body>
+</html>
